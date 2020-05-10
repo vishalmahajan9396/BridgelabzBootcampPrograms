@@ -7,15 +7,17 @@ isFullTime=2;
 wagePerHour=20;
 randomCheck=$(( RANDOM%3 ));
 
-if [ $isPartTime -eq $randomCheck ];
-then
-	fullDayHour=8;
-elif [ $isFullTime -eq $randomCheck ];
-then
-	fullDayHour=12;
-else
-	salary=0;
-fi
+case $randomCheck in
+	$isFullTime)
+		fullDayHour=12;
+		;;
+	$isPartTime)
+		fullDayHour=8;
+		;;
+	*)
+		fullDayHour=0;
+		;;
+esac
 
 salary=$(( $wagePerHour * $fullDayHour ));
 echo "Salary: "$salary;
