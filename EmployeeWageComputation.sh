@@ -2,14 +2,20 @@
 
 echo "Welcome to Employee Wage Computation Program";
 
-randomCheck=$(( RANDOM%2 ));
-isPresent=1;
-if [ $isPresent -eq $randomCheck ];
+isPartTime=1;
+isFullTime=2;
+wagePerHour=20;
+randomCheck=$(( RANDOM%3 ));
+
+if [ $isPartTime -eq $randomCheck ];
 then
-	wagePerHour=20;
 	fullDayHour=8;
-	salary=$(($wagePerHour * $fullDayHour));
+elif [ $isFullTime -eq $randomCheck ];
+then
+	fullDayHour=12;
 else
 	salary=0;
 fi
+
+salary=$(( $wagePerHour * $fullDayHour ));
 echo "Salary: "$salary;
