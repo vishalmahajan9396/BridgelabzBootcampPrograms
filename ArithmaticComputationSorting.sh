@@ -26,3 +26,19 @@ resultArray[2]="${result[2]}"
 resultArray[3]="${result[3]}"
 
 echo ${resultArray[@]};
+
+arrayLength=${#resultArray[@]}
+for (( i=0;i<$arrayLength;i++ ))
+do
+   for (( j=i+1;j<$arrayLength;j++ ))
+   do
+      if [ ${resultArray[i]} -lt ${resultArray[j]} ];
+      then
+         temp=${resultArray[i]};
+         resultArray[$i]=${resultArray[j]};
+         resultArray[$j]=$temp;
+      fi
+   done
+done
+
+echo ${resultArray[@]};
