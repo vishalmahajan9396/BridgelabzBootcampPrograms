@@ -8,3 +8,4 @@ read secondNumber;
 read thirdNumber;
 
 operationFirst=$(($firstNumber+$secondNumber*$thirdNumber));
+operationSecond=$(($firstNumber*$secondNumber+$thirdNumber));
