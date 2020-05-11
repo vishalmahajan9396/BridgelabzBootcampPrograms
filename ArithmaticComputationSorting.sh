@@ -19,3 +19,10 @@ result[2]="$operationThird";
 result[3]="$operationFourth";
 
 echo ${result[@]};
+
+resultArray[0]="${result[0]}"
+resultArray[1]="${result[1]}"
+resultArray[2]="${result[2]}"
+resultArray[3]="${result[3]}"
+
+echo ${resultArray[@]};
