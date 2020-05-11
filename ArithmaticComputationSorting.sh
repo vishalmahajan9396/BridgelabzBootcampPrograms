@@ -11,3 +11,11 @@ operationFirst=$(($firstNumber+$secondNumber*$thirdNumber));
 operationSecond=$(($firstNumber*$secondNumber+$thirdNumber));
 operationThird=$(($thirdNumber+$firstNumber/$secondNumber));
 operationFourth=$(($firstNumber%$secondNumber+$thirdNumber));
+
+declare -A result
+result[0]="$operationFirst";
+result[1]="$operationSecond";
+result[2]="$operationThird";
+result[3]="$operationFourth";
+
+echo ${result[@]};
