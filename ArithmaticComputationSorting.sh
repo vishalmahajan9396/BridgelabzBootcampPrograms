@@ -6,3 +6,5 @@ echo "Enter Three Number"
 read firstNumber;
 read secondNumber;
 read thirdNumber;
+
+operationFirst=$(($firstNumber+$secondNumber*$thirdNumber));
