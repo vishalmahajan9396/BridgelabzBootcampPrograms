@@ -28,3 +28,12 @@ then
 else
    echo "Please Enter valid Email ID";
 fi
+
+read -p "Enter Mobile Number:" mobileNumber
+mobilePattern="^((\+){1}91){1}[789]{1}[0-9]{9}$";
+if [[ $mobileNumber =~ $mobilePattern ]]
+then
+   echo "Mobile number:" $mobileNumber;
+else
+   echo "Please Enter Valid Mobile number";
+fi
