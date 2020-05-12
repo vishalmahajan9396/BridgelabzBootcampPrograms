@@ -37,3 +37,12 @@ then
 else
    echo "Please Enter Valid Mobile number";
 fi
+
+read -p "Enter Password:" password;
+passwordPattern="^((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,})$"
+if [[ $password =~ $passwordPattern ]]
+then
+	echo "Password:" $password;
+else
+	echo "Please Enter valid Password";
+fi
